@@ -1,5 +1,5 @@
 import React, {useState, useCallback}from 'react';
-import ItemsList from './hooks/itemsList';
+import ItemsList from './itemsList';
 
 
 function App() {
