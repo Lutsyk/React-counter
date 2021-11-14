@@ -10,13 +10,20 @@ function App() {
     y:0
   })
 
-  useEffect(()=>{
-    window.addEventListener('mousemove', event =>{
-      setPos({
-        x: event.clientX,
-        y: event.clientY
-      })
+  const mouseMoveHandler = event =>{
+    setPos({
+      x: event.clientX,
+      y: event.clientY
     })
+  }
+
+  useEffect(()=>{
+    window.addEventListener('mousemove', mouseMoveHandler)
+
+    return () => {
+      window.removeEventListener('mousemove', mouseMoveHandler)
+    }
+
   },[])
 
   useEffect(()=>{
