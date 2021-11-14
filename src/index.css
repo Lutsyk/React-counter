@@ -31,6 +31,10 @@ code {
   box-shadow: 4px 8px 10px 0px rgba(0, 0, 0, 1);
 }
 
+.btn:hover{
+  background-color: gainsboro;
+}
+
 .container{
   display: flex;
   align-items: center;
