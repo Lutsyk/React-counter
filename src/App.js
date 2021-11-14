@@ -5,6 +5,19 @@ function App() {
 
   const [type, setType] = useState('users')
   const [data, setData] = useState([])
+  const [pos, setPos] = useState({
+    x:0,
+    y:0
+  })
+
+  useEffect(()=>{
+    window.addEventListener('mousemove', event =>{
+      setPos({
+        x: event.clientX,
+        y: event.clientY
+      })
+    })
+  },[])
 
   useEffect(()=>{
     fetch(`https://jsonplaceholder.typicode.com/${type}`)
@@ -21,6 +34,7 @@ function App() {
         <button className="btn" onClick={()=>setType('todos')}>Todo</button>
         <button className="btn" onClick={()=>setType('posts')}>Posts</button>
       </div>
+      <pre>{JSON.stringify(pos, null, 2)}</pre>
       <pre>{JSON.stringify(data, null, 2)}</pre>
 
     </div>
