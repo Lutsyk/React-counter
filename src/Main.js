@@ -8,7 +8,7 @@ export default function Main() {
         <>
             <h1>Hi from Context</h1>
             <div>
-                <button onClick={show} className="btn">Show alert</button>
+                <button onClick={()=> show('text from Main.js')} className="btn">Show alert</button>
             </div>
         </>
     )
